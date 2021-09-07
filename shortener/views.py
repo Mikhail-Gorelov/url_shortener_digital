@@ -1,7 +1,6 @@
 from django.conf import settings
 from django.core.cache import cache
 from django.shortcuts import render, redirect
-
 from shortener.forms import URLForm
 from shortener.services import get_or_create_session_key, ShortenerService
 

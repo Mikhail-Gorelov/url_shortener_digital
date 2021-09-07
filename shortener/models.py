@@ -37,7 +37,6 @@ class URL(models.Model):
              update_fields=None):
         if not self.short_url:
             self.short_url = generate_short_url()
-
         try:
             super().save()
         except IntegrityError as ex:
