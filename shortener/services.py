@@ -13,6 +13,7 @@ def get_or_create_session_key(session):
 
 
 class ShortenerService:
+    """забираем урл от пользователя из кэша"""
     @staticmethod
     def get_original_by_short_or_404(short_url):
         original_url = cache.get(short_url)
@@ -22,6 +23,7 @@ class ShortenerService:
             cache.set(short_url, original_url, timeout=settings.CACHE_TTL)
         return original_url
 
+    """Делаем пагинацию для нашей таблички"""
     @staticmethod
     def get_paginated_urls(session_key, page):
         urls = URL.objects.filter(session=session_key).order_by('-created')

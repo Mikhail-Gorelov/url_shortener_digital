@@ -3,6 +3,8 @@ from django import forms
 from shortener.models import URL
 from shortener.validators import validate_short_url
 
+''' Инициализирую форму, для работы с данными, в методе save сохраняю также сессию '''
+
 
 class URLForm(forms.ModelForm):
     class Meta:

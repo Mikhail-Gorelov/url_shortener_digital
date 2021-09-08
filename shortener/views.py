@@ -4,6 +4,8 @@ from django.shortcuts import render, redirect
 from shortener.forms import URLForm
 from shortener.services import get_or_create_session_key, ShortenerService
 
+"""здесь основная логика работы с формой и пагинацией"""
+
 
 def main(request):
     context = {}
@@ -23,6 +25,9 @@ def main(request):
     context['form'] = form
     context['paginated_urls'] = paginated_urls
     return render(request, 'shortener/main.html', context)
+
+
+"""здесь делаем редирект на оригинальный урл"""
 
 
 def redirect_to_origin(request, short_url):

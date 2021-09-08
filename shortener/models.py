@@ -33,6 +33,7 @@ class URL(models.Model):
     def get_short_url(self):
         return f'{settings.HOST}/{self.short_url}'
 
+    ''' Сохраняем модель, если у нас есть short_url от пользователя, то используем его, если нет - генерируем свой'''
     def save(self, force_insert=False, force_update=False, using=None,
              update_fields=None):
         if not self.short_url:
