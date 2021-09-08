@@ -23,7 +23,9 @@
 #### How to use:
 
   copy project: git clone https://github.com/Mikhail-Gorelov/url_shortener_digital.git ./project_name
+  
   docker-compose up -d --build
+  
   docker-compose logs -f
 
 
