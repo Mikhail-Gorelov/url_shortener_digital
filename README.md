@@ -16,3 +16,8 @@ Caching of redirects in redis. Need to save the shortened url mapping to the red
 Cleaning old rules on a schedule:
 deleting entries from MySQL; 
 purging redirects from Redis can be implemented either together with MySQL purging or by TTL
+
+How to use:
+copy project: git clone https://github.com/Mikhail-Gorelov/url_shortener_digital.git ./project_name
+docker-compose up -d --build
+docker-compose logs -f
